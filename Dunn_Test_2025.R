@@ -16,8 +16,8 @@ library(broom)
 # --- PART I: LOAD AND CLEAN ALL RAW DATA ---
 
 # --- a) Load and Clean COVID-19 Time-Series Data ---
-df_covid_raw <- read_excel("C:/Users/L03565094/Dropbox/Francisco/Papers_SUTD/Sharing_Economy/Simulation/Platform/Covid/Code2021/Long2/Covid_Jakarta_and_population.xlsx", sheet = "Cases_Mar2020_to_Jun2021")
-pop <- read_excel("C:/Users/L03565094/Dropbox/Francisco/Papers_SUTD/Sharing_Economy/Simulation/Platform/Covid/Code2021/Long2/Covid_Jakarta_and_population.xlsx", sheet = "population")
+df_covid_raw <- read_excel("C:/Users/Covid_Jakarta_and_population.xlsx", sheet = "Cases_Mar2020_to_Jun2021")
+pop <- read_excel("C:/Users/Covid_Jakarta_and_population.xlsx", sheet = "population")
 
 df_weekly <- df_covid_raw %>%
   mutate(date = as.Date(date)) %>%
@@ -33,7 +33,7 @@ df_covid_cleaned <- df_weekly %>%
   ungroup()
 
 # --- b) Load and Prepare Raw Survey Data ---
-survey_data <- read_csv("C:/Users/L03565094/Dropbox/Francisco/Papers_SUTD/Sharing_Economy/Simulation/Platform/Covid/Datasets/Jakarta_survey_covid_paper_raw_data.csv")
+survey_data <- read_csv("C:/Users/Jakarta_survey_covid_paper_raw_data.csv")
 
 survey_prepared <- survey_data %>%
   rename(district = area) %>%
@@ -54,7 +54,7 @@ survey_prepared <- survey_data %>%
       `Q20_Time_to_reach_my_workplace` == "1 -14 menit" ~ 1, `Q20_Time_to_reach_my_workplace` == "15 -30 menit" ~ 2, `Q20_Time_to_reach_my_workplace` == "31 – 60 menit" ~ 3, `Q20_Time_to_reach_my_workplace` == "1-2 jam" ~ 4, `Q20_Time_to_reach_my_workplace` == "Lebih dari 2 jam" ~ 5, TRUE ~ NA_real_)
   )
 
-output_directory <- "C:/Users/L03565094/Dropbox/Francisco/Papers_SUTD/Sharing_Economy/Simulation/Platform/Covid/Results2025/"
+output_directory <- "C:/Users/Results2025/"
 if (!dir.exists(output_directory)) {
   dir.create(output_directory, recursive = TRUE)
 }
@@ -124,3 +124,4 @@ if(nrow(model_data) > 0) {
 #if nama_kelurahan="RAWA BADAK SELATAN" or nama_kelurahan="TUGU SELATAN" 
 #or nama_kelurahan="KELAPA GADING BARAT" then the area is "Tanah Merah".LAstly 
 #if nama_kelurahan="PETAMBURAN" or nama_kelurahan="BENDUNGAN HILIR" then the area is "Benhil"
+
