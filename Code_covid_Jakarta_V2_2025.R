@@ -7,7 +7,7 @@ library("viridis") # Import  nice color palette
 cat("\014") 
 rm(list = ls())
 graphics.off()
-df <- read_excel("C:\\Users\\L03565094\\Dropbox\\Francisco\\Papers_SUTD\\Sharing_Economy\\Simulation\\Platform\\Covid\\Code2021\\Long2\\Covid_Jakarta_and_population.xlsx", sheet = "Cases_Mar2020_to_Jun2021")
+df <- read_excel("C:\\Users\\Covid_Jakarta_and_population.xlsx", sheet = "Cases_Mar2020_to_Jun2021")
 
 df <- subset(df, df$day!=0)  
 #--------------------------------------------------------------
@@ -118,7 +118,7 @@ df$diff_positive <- df$positive - df$positive_lag
 
 ### Let's not append the population of each kelurahan. 
 ## The correct way to analyze the new cases is by  weighting according to the total pulation
-pop <- read_excel("C:\\Users\\L03565094\\Dropbox\\Francisco\\Papers_SUTD\\Sharing_Economy\\Simulation\\Platform\\Covid\\Code2021\\Long2\\Covid_Jakarta_and_population.xlsx", sheet = "population")
+pop <- read_excel("C:\\Users\\Covid_Jakarta_and_population.xlsx", sheet = "population")
 pop <- pop[,c("ID_KEL","total_pop","area_km2_in_land","pop_density_ppl_per_sq_km","FID")]
 df <- merge(x=df, y=pop, by="ID_KEL", all.x=T)
 
@@ -230,7 +230,7 @@ df_avg_months_nicer$color_all <- ifelse(df_avg_months_nicer$color_all=="04 - Ben
 
 df_avg_months_nicer$size <- ifelse(df_avg_months_nicer$color_all=="01 - Others", 1, 3)
 
-setwd("C:\\Users\\L03565094\\Dropbox\\Francisco\\Papers_SUTD\\Sharing_Economy\\Simulation\\Platform\\Covid\\Code 2025") # This line stores on specific directory
+setwd("C:\\Users\\Code 2025") # This line stores on specific directory
 png("pop_density_vs_infections_by_month.png", width = 12, height = 4, units = 'in', res = 300) #This line will save the image as PNG format
 a<- ggplot(data=df_avg_months_nicer, 
            aes(x=positive_new_per_week_per_1000, y=pop_density, fill=color_all)) +
@@ -305,7 +305,7 @@ df_avg_months$quadrant2 <- NULL
 df_avg_months$quadrant3 <- NULL
 df_avg_months$quadrant4 <- NULL
 
-setwd("C:\\Users\\L03565094\\Dropbox\\Francisco\\Papers_SUTD\\Sharing_Economy\\Simulation\\Platform\\Covid\\Code 2025") # This line stores on specific directory
+setwd("C:\\Users\\Code 2025") # This line stores on specific directory
 png("quadrants.png", width =12, height = 6, units = 'in', res = 300)
 a <- ggplot(df_avg_months, aes(fill=as.factor(quadrant), y=quadrant, x=as.factor(month))) + 
   geom_bar(position="fill", stat="identity") + 
@@ -334,5 +334,6 @@ graphics.off()
 # 3. The function  scale_fill_viridis allows the use of nicer color pallet for R
 ggsave(filename = "quadrants.eps", plot=a,family="Times",
        width = 12, height = 6, dpi = 300, units = "in")
+
 
 
