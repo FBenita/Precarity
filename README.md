@@ -1,8 +1,8 @@
-# Reproduce Results from Benita, F. (2025)
+# Reproduce Results from Benita, F and Martínez, R. (2025)
 
 This repository contains the dataset and the code necessary to reproduce the results in the paper:
 
-**Benita, F. (2022).** *From precarity to latent infrastructure: Fragmentation, social resilience, and community-led governance in urban Jakarta*. 
+**Benita, F. (2025).** *A Pandemic in the Fragmented City: Social Infrastructure and COVID-19 in Jakarta*. 
 
 ## Overview
 
