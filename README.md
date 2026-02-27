@@ -2,7 +2,7 @@
 
 This repository contains the dataset and the code necessary to reproduce the results in the paper:
 
-**Benita, F. and Martinez, R. (2026).** *A pandemic in the fragmented city: Social infrastructure and COVID-19 in Jakarta. Social Sciences & Humanities Open, 13, 102474.*. 
+**Benita, F. and Martinez, R. (2026).** *A pandemic in the fragmented city: Social infrastructure and COVID-19 in Jakarta. Social Sciences & Humanities Open, 13, 102474*. 
 
 ## Overview
 
