@@ -1,8 +1,8 @@
-# Reproduce Results from Benita, F and Martínez, R. (2025)
+# Reproduce Results from Benita, F and Martinez, R. (2026)
 
 This repository contains the dataset and the code necessary to reproduce the results in the paper:
 
-**Benita, F. (2025).** *A Pandemic in the Fragmented City: Social Infrastructure and COVID-19 in Jakarta*. 
+**Benita, F. and Martinez, R. (2026).** *A pandemic in the fragmented city: Social infrastructure and COVID-19 in Jakarta. Social Sciences & Humanities Open, 13, 102474.*. 
 
 ## Overview
 
